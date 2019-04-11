@@ -7,4 +7,8 @@ class ProjectRepository
     json = JSON.parse(res.body)
     json.map { |p| ProjectEntity.new(p) }
   end
+
+  def create(params)
+    res = post("/projects", params.to_json)
+  end
 end
